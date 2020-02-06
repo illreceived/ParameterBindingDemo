@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "baabf98e-d30e-44f7-90cf-390fa7180fae",
+		"name": "ParameterBindingDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DefaultSimpleValueBinding-GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:57020/api/DefaultBinding/1?value=test&timeSpan=11:55",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57020",
+					"path": [
+						"api",
+						"DefaultBinding",
+						"1"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "test"
+						},
+						{
+							"key": "timeSpan",
+							"value": "11:55"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DefaultSimpleValueBinding-POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:57020/api/DefaultBinding?value=test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57020",
+					"path": [
+						"api",
+						"DefaultBinding"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DefaultSimpleValueBinding-POST Complex",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:57020/api/DefaultBinding",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57020",
+					"path": [
+						"api",
+						"DefaultBinding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AttributeSimpleValueBinding-GET FromBody",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:57020/api/AttributeBinding/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57020",
+					"path": [
+						"api",
+						"AttributeBinding",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AttributeSimpleValueBinding-POST SimpleValue From Body",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\"This is from the body\""
+				},
+				"url": {
+					"raw": "http://localhost:57020/api/AttributeBinding",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57020",
+					"path": [
+						"api",
+						"AttributeBinding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AttributeSimpleValueBinding-PUT Complex Value from URL",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:57020/api/AttributeBinding?a=Test&b=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57020",
+					"path": [
+						"api",
+						"AttributeBinding"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "Test"
+						},
+						{
+							"key": "b",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TypeConvertor Binding - POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:57020/api/TypeConverter?colour=%23FFFFFF",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57020",
+					"path": [
+						"api",
+						"TypeConverter"
+					],
+					"query": [
+						{
+							"key": "colour",
+							"value": "%23FFFFFF"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModelBinding - GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:57020/api/ModelBinding/1?range=12-14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57020",
+					"path": [
+						"api",
+						"ModelBinding",
+						"1"
+					],
+					"query": [
+						{
+							"key": "range",
+							"value": "12-14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModelBinding - GET (from header)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:57020/api/ModelBinding/1?range=12-14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57020",
+					"path": [
+						"api",
+						"ModelBinding",
+						"1"
+					],
+					"query": [
+						{
+							"key": "range",
+							"value": "12-14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValueBinding - GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "English",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "Spanish",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:57020/api/ValueBinding",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57020",
+					"path": [
+						"api",
+						"ValueBinding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ParameterBinding - GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "English"
+					},
+					{
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "Spanish"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:57020/api/ParameterBinding",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57020",
+					"path": [
+						"api",
+						"ParameterBinding"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
