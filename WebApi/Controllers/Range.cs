@@ -34,12 +34,21 @@ namespace WebApi.Controllers
                 return false;
             }
 
-            string key = val.RawValue as string;
-            if (key == null)
+
+            string key;
+            switch (val.RawValue)
             {
-                bindingContext.ModelState.AddModelError(
-                    bindingContext.ModelName, "Wrong value type");
-                return false;
+                case string s:
+                   key = s;
+                   break;
+
+                case IEnumerable<string> e:
+                   key = e.FirstOrDefault();
+                   break;
+                default:
+                   bindingContext.ModelState.AddModelError(
+                   bindingContext.ModelName, "Wrong value type");
+                   return false;
             }
 
             var parts = key.Split('-');
@@ -47,7 +56,7 @@ namespace WebApi.Controllers
             {
                 if (int.TryParse(parts[0], out int min))
                 {
-                    if(int.TryParse(parts[1], out int max))
+                    if (int.TryParse(parts[1], out int max))
                     {
                         bindingContext.Model = new Range() { Min = min, Max = max };
                         return true;

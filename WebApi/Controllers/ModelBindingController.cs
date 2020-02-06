@@ -10,8 +10,6 @@ namespace WebApi.Controllers
 {
     public class ModelBindingController : ApiController
     {
-
-        // GET api/<controller>/5
         public IHttpActionResult Get(int id, [ModelBinder(typeof(RangeModelBinder))] Range range)
         {
             if (ModelState.IsValid)
@@ -20,5 +18,14 @@ namespace WebApi.Controllers
             }
             return BadRequest(ModelState);
         }
+
+        //public IHttpActionResult Get(int id, [ModelBinder] Range range)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        return Ok(range.ToString());
+        //    }
+        //    return BadRequest(ModelState);
+        //}
     }
 }

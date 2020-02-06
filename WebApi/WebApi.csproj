@@ -158,11 +158,14 @@
     <Compile Include="Controllers\AttributeBindingController.cs" />
     <Compile Include="Controllers\Colour.cs" />
     <Compile Include="Controllers\DefaultBindingController.cs" />
+    <Compile Include="Controllers\HeaderValueProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModelBindingController.cs" />
+    <Compile Include="Controllers\ParameterBindingController.cs" />
     <Compile Include="Controllers\Range.cs" />
     <Compile Include="Controllers\SimpleObject.cs" />
     <Compile Include="Controllers\TypeConverterController.cs" />
+    <Compile Include="Controllers\ValueBindingController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

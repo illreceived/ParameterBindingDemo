@@ -1,7 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.ModelBinding;
+using System.Web.Http.ModelBinding.Binders;
+using System.Web.Http.ValueProviders;
+using WebApi.Controllers;
 
 namespace WebApi
 {
@@ -19,6 +21,25 @@ namespace WebApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //var provider = new SimpleModelBinderProvider(typeof(Range), new RangeModelBinder());
+            //config.Services.Insert(typeof(ModelBinderProvider), 0, provider);
+
+            //config.Services.Add(typeof(ValueProviderFactory), new HeaderValueProviderFactory());
+
+            //config.ParameterBindingRules.Add(p =>
+            //{
+            //    if (p.ParameterType == typeof(string) && p.ParameterName == "path" &&
+            //        p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Get))
+            //    {
+            //        return new EnvironmentBinding(p, "path");
+            //    }
+            //    else
+            //    {
+            //        return null;
+            //    }
+            //});
+
         }
     }
 }
